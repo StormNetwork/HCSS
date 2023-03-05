@@ -6,3 +6,4 @@ USAGE
 2. use the editor
 3. fork, star, like, or whatever cause idk
 4. join StormNetwork!!! https://discord.gg/rDep4Rq2Dg
+5. NEVER BE A SKID!
