@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML File Editor</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="editor">
+    <div class="jfk">
+      <textarea id="html-code" placeholder="//Enter HTML here..." class="htttml"></textarea>
+      <textarea id="css-code" placeholder="//Enter CSS here..." class="csss"></textarea>
+      <div class="view">
+        <iframe id="preview" class="pre"></iframe>
+        <style id="style-tag"></style>
+      </div>
+    </div>
+    <button id="apply-button" class="apply">Preview</button>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const htmlCode = document.getElementById("html-code");
+  const cssCode = document.getElementById("css-code");
+  const script = document.getElementById("javascript");
+  const applyButton = document.getElementById("apply-button");
+  const preview = document.getElementById("preview").contentDocument;
+  const styleTag = document.getElementById("style-tag");
+
+  applyButton.addEventListener("click", function () {
+    const html = htmlCode.value;
+    const css = cssCode.value;
+    preview.open();
+    preview.write(`
+          <html>
+            <head>
+              <style>
+                ${css}
+              </style>
+              <style>
+              body {
+            color: white
+              }
+              </style>
+            </head>
+            <body>
+              ${html}
+            </body>
+          </html>
+        `);
+    preview.close();
+  });
+</script>
+<style>
+  .pre {
+    width: 720px;
+    height: 400px;
+
+
+    margin-bottom: 10px;
+
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 4px 4px 14px #000;
+    -webkit-box-shadow: 4px 4px 14px #000;
+    box-shadow: 4px 4px 14px #000;
+    -moz-transform: rotate(20deg);
+
+  }
+
+  .pre body {
+    /* Set the color of the text to red */
+    color: red;
+  }
+
+  .jfk {}
+
+  .apply {
+    width: 725px;
+    height: 35px;
+  }
+
+  .htttml {
+    width: 360px;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+
+  .csss {
+    width: 360px;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+
+  .editor {}
+
+  body {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #17141d;
+  }
+</style>
